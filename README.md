@@ -13,6 +13,8 @@ It consists of 6 main php components, these are:
 - **add.php** : allows users to add new questions to the survey.
 - **final.php** : final page of the application that redirects person either to the main page or to the survey again.
 
+The basic css style features are defined in **/css/style.css** folder.
+
 ## Motivation
 
 This project is built for the assessment handed by Hugo BV.
