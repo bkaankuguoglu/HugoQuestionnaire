@@ -2,26 +2,29 @@
 <?php session_start(); ?>
 <?php
 // set question number
-  $number = (int) $_GET('n');
+
+//isset($_GET['n'])
+  $number = (int) $_GET['n'];
+
+
+  $allquestions = "SELECT * FROM questions";
+  $res = $mysqli->query($allquestions);
+  $total = $res->num_rows;
 
 // get question
-  $query = "SELECT * FROM `questions`
-            WHERE question_number = $number";
+  $query = "SELECT * FROM questions WHERE question_number = $number";
 
 // get result
-  $result = mysqli->query($query) or die(mysqli->error.__LINE__);
+  $result = $mysqli->query($query);
 
   $question = $result->fetch_assoc();
 
 // get choices
-  $query = "SELECT * FROM `choices`
-            WHERE question_number = $number";
+  $query = "SELECT * FROM choices WHERE question_number = $number";
 
-  choices = mysqli->query($query) or die(mysqli->error.__LINE__);
 
-  $result = mysqli->query($query) or die(mysqli->error.__LINE__);
+  $result = $mysqli->query($query);
 
-  $total = $result->num_rows;
 
 ?>
 <!DOCTYPE html>
@@ -40,21 +43,22 @@
         </header>
       <main>
           <div class = "container">
-              <div class = "current"> Question <?php echo $question['quetion_number']; ?> of <?php echo $total; ?> </div>
+              <div class = "current"> Question <?php echo $question['question_number']; ?> of <?php echo $total; ?> </div>
               <p class = "question">
-                 <?php echo $question('text'); ?>
+                 <?php echo $question['text']; ?>
               </p>
 
               <form method = "post" action = "process.php">
                 <ul class = " choices">
 
-                  <?php while($row= $choices->fetch_assoc()): ?>
-                    <li><input name="choice" type= "radio" value=<?php echo $row['id'];?> /><?php echo $row['text'];?></li>
+                  <?php while($row= $result->fetch_assoc()){ ?>
+                    <li><input name="choice" type= "radio" value=<?php echo $row['id']; ?> /><?php echo $row['text']; ?></li>
 
-                  <?php endwhile: ?>
+                  <?php  } ?>
                </ul>
-               <input type="submit" value="Submit" />
                <input type ="hidden" name="number" value="<?php echo $number; ?>"/>
+               <input type="submit" value="Submit" />
+
              </form>
 
           </div>

@@ -17,6 +17,7 @@
               <h2>You're done!</h2>
               <p> Congrats You've completed the test</p>
               <a href="question.php?n=1" class="start">Take Again</a>
+              <a href="index.php" class="start">Go to homepage</a>
           </div>
       </main>
       <footer>

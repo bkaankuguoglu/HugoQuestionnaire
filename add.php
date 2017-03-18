@@ -1,15 +1,17 @@
 <?php include 'database.php' ?>
 <?php
+
   if(isset($_POST['submit'])){
+
       $question_number = $_POST['question_number'];
       $question_text = $_POST['question_text'];
 
-      $choices = array():
-      $choices[1] = $_POST['choice'];
-      $choices[2] = $_POST['choice'];
-      $choices[3] = $_POST['choice'];
-      $choices[4] = $_POST['choice'];
-      $choices[5] = $_POST['choice'];
+      $choices = array();
+      $choices[1] = $_POST['choice1'];
+      $choices[2] = $_POST['choice2'];
+      $choices[3] = $_POST['choice3'];
+      $choices[4] = $_POST['choice4'];
+      $choices[5] = $_POST['choice5'];
 
       $query = " INSERT INTO `questions` (question_number, text)
                   VALUES ('$question_number','$question_text')";
@@ -19,9 +21,8 @@
       // validating insert
       if($insert_row){
           foreach($choices as $choice=>$value){
-
           //choice query
-              $query = " INSERT INTO `choices` (question_number, text)
+              $query = " INSERT INTO choices (question_number, text)
                           VALUES ('$question_number','$value')";
 
           // run query
@@ -61,7 +62,7 @@
           <?php
               if(isset($msg)){
                 echo '<p>'. $msg . '</p>';
-              }
+              } ?>
           <form method ="post" action="add.php">
               <p>
                   <label> Question number</label>
@@ -93,7 +94,6 @@
               </p>
 
               <p>
-                  <label> Choice #5</label>
                   <input type ="submit" name="submit" value="Submit"/>
               </p>           </form>
           </div>

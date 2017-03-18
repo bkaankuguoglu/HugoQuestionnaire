@@ -1,8 +1,9 @@
-<?php include 'database.php'; ?>
-<?php session_start(); ?>
-<?php
-if(!isset($_SESSION['score'])){
-      $_SESSION('score')=0;
+<?php include 'database.php';
+
+if(!isset($_POST['number'])){
+  echo 'Number is not defined';
+  exit;
+
 }
 
 if($_POST['number']){
@@ -11,20 +12,15 @@ if($_POST['number']){
     $next = $number +1;
 }
 
-$query = "SELECT * FROM `questions`
-          WHERE question_number = $number";
+$query = "SELECT * FROM questions";
 
-$result = mysqli->query($query) or die ($mysqli->error.__LINE__);
+$result = $mysqli->query($query) or die ($mysqli->error.__LINE__);
 $total = $result->num_rows;
 
 
-
-$query = "SELECT * FROM `choices`
-          WHERE question_number = $number";
+$query = "SELECT * FROM choices  WHERE question_number = $number";
 
 $result = $mysqli->query($query) or die ($mysqli->error.__LINE__);
-
-$row = $result->fetch_assoc();
 
 
 //check if the last question

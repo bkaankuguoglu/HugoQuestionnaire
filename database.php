@@ -1,6 +1,6 @@
 <?php
 // create connection credentials
-$db_host = 'hugodb.cyzpp0zwfkup.us-west-2.rds.amazonaws.com:3306';
+$db_host = 'hugodb.cyzpp0zwfkup.us-west-2.rds.amazonaws.com';
 $db_name = 'hugodb';
 $db_user = 'admin';
 $db_pass = 'admin1234';

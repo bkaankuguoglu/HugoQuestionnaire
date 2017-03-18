@@ -1,9 +1,8 @@
 
 <?php include 'database.php'; ?>
 <?php
-$query = "SELECT * FROM `questions`
-          WHERE question_number = $number";
-$result = mysqli->query($query) or die(mysqli->error.__LINE__);
+$query = "SELECT * FROM questions";
+$result = $mysqli->query($query);
 
 $total = $result->num_rows;
 
@@ -18,24 +17,24 @@ $total = $result->num_rows;
 
       <body>
         <header>
-          <div class = "container">
             <h1>Questionnaire</h1>
-          </div>
         </header>
-      <main>
           <div class = "container">
             <h2>Hugo BV</h2>
             <p> This is a questionnaire made for Hugo BV</p>
             <ul>
-              <li><strong>Number of Questions: </strong><?php echo $total?></li>
+              <li><strong>Number of Questions: </strong><?php echo $total; ?></li>
               <li><strong>Type: </strong>Multiple Choice</li>
-              <li><strong>Estimated Time: </strong><?php echo $total * 0.5?></li>
             </ul>
 
             <a href = "question.php?n=1" class="start">Start Questionnaire</a>
+            <a href = "add.php" class="add">Add Question</a>
 
           </div>
-      </main>
     </body>
+    <footer>
+      <p> Berk Kaan Kuguoglu 2017</p>
+
+    </footer>
 
 </html>

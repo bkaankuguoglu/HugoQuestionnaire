@@ -3,7 +3,6 @@ body{
   font-size: 15px
   line-height: 1.6em;
 
-
 }
 
 li{
@@ -41,23 +40,27 @@ input[type='number']{
   width: 60%;
   margin:0 auto;
   overflow: auto;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  margin:0px 0px 0px 30px;
+}
+
+.header{
+  background-color: #DFDFDF;
+  border-bottom: 1px solid #999999;
+  height: 60px;
+}
+
+.footer{
+  background-color: #EFEFEF;
+  border-up: 1px solid #999999;
+  clear:both;
+  margin: 0px;
+  padding: 4px;
 
 }
 
-header{
-  border-bottom: 3px #f4f4f4 solid;
-}
-
-footer{
-  border-top: 3px #f4f4f4 solid;
-  text-align:center;
-  padding-top: 5px;
-
-}
-
-main{
-  padding-bottom: 10px
-}
 
 a.start{
   display: inline-block;
@@ -75,9 +78,14 @@ a.start{
 
 }
 
+.footer p{
+    margin: 0px;
+    padding: 0px;
+}
+
 @media only screen and (max-width:960px){
     .container{
         width: 80%;
-        
+
     }
 }
