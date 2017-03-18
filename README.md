@@ -25,7 +25,7 @@ No installation needed.
 
 ## Tests
 
-[You can try out the application from here!](http://ec2-54-202-97-207.us-west-2.compute.amazonaws.com/)
+You can try out the application from [here!](http://ec2-54-202-97-207.us-west-2.compute.amazonaws.com/)
 
 ## Contributors
 
