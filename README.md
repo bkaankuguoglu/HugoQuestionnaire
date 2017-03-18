@@ -29,7 +29,7 @@ You can try out the application from [here!](http://ec2-54-202-97-207.us-west-2.
 
 ## Contributors
 
-Created and built by Berk Kaan Kuguoglu in a small dorm room full of pringles and beers.
+Designed and built by Berk Kaan Kuguoglu in a small dorm room full of pringles and beers.
 
 ## License
 
