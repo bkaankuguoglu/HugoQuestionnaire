@@ -1,6 +1,6 @@
 ## Synopsis
 
-HugoQuestionnaire is a simple questionnaire application built with PHP and MySQL that allows users to play with a simple questionnaire app that they can take the survey, or add new questions instead.
+HugoQuestionnaire is a simple questionnaire application built with PHP and MySQL that allows users to play with a simple questionnaire app that they can take the survey, or add new questions instead. It's not yet to be completed, and requires more features which I hope to develop if I can make some time for them.
 
 ## Code Example
 
